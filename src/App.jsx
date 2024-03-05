@@ -1,12 +1,12 @@
-import  WelcomeScreen from './components/WelcomeScreen/WelcomeScreen'
+import CustomRoutes from "./routes/CustomRoutes";
 
-function App() {
+function App(){
 
-  return (
-    <>
-      <WelcomeScreen/>
-    </>
-  )
+    return (
+        <>
+            <CustomRoutes/>
+        </>
+    )
 }
 
 export default App;

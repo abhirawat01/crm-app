@@ -4,13 +4,14 @@ import {
   Button,
   Dialog,
   Card,
-  CardHeader,
   CardBody,
   CardFooter,
   Typography,
   Input,
   Checkbox,
 } from "@material-tailwind/react";
+
+import { Link } from 'react-router-dom';
 
 export default function Login() {
   const [open, setOpen] = useState(false);
@@ -40,19 +41,21 @@ export default function Login() {
             <Typography className="-mb-2" variant="h6">
               Your Email
             </Typography>
-            <Input label="Email" size="lg" />
+            <Input label="Email" size="lg" type="email" required/>
             <Typography className="-mb-2" variant="h6">
               Your Password
             </Typography>
-            <Input label="Password" size="lg" />
+            <Input label="Password" size="lg" type="password" required/>
             <div className="-ml-2.5 -mt-3">
               <Checkbox label="Remember Me" />
             </div>
           </CardBody>
           <CardFooter className="pt-0">
-            <Button variant="gradient" onClick={handleOpen} fullWidth>
+          <Link to={'/admin'}>
+            <Button type="submit" variant="gradient" onClick={handleOpen} fullWidth>
               log in
             </Button>
+          </Link>
             <Typography variant="small" className="mt-4 flex justify-center">
               Don&apos;t have an account?
               <Typography

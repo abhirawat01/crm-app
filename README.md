@@ -5,6 +5,8 @@
 
 ## Dependencies
 
-```/d/Frontend-Assignment/Backend/src
+```
+   /d/Frontend-Assignment/Backend/src
    /d/Developer/Projects/AirlineManagementSystem/API_Gateway
-   /d/Developer/Projects/AirlineManagementSystem/AuthService ```
+   /d/Developer/Projects/AirlineManagementSystem/AuthService
+```

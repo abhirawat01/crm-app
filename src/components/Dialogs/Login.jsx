@@ -10,10 +10,34 @@ import {
   Input,
   Checkbox,
 } from "@material-tailwind/react";
-// import { redirect } from "react-router-dom";
-// import CustomRoutes from "../../routes/CustomRoutes";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Login() {
+  const [loading,setLoading] = useState(false);
+  const success = () => toast.success("Login Successful." ,{
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+  });
+
+  const failed = ()=> toast.error('Incorrect username or password.', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+   });
+
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen((current) => !current);
 
@@ -22,27 +46,39 @@ export default function Login() {
   const handleInput = (e) => {
     const name = e.target.name;
     const value = e.target.value;
+    
+    setformInput((prevalue)=>{
 
-    setformInput({ ...formInput, [name]: value });
-  };
+      return {
+        ...prevalue,
+        [name]: value
+      }
+    })
 
-  const handleSubmit = (e) => {
+  }
+
+  const navigate = useNavigate();
+
+  //This is a function thats make http call to the server and navigate the user to admin page
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // const formdata = JSON.stringify(formInput);
-
-    axios.post("http://localhost:3005/authentication", formInput)
-      .then((response) => {
-        console.log(response.data);
-        
-        if (response.data.success) {
-          console.log("inside success")
-        }
-        else{
-          console.log('User Deatils Mismatched');
-        }
-        setformInput({ email: "", password: "" });
-        
-      });
+    setLoading(true);
+    try {
+      const response = await axios.post("http://localhost:3005/authentication", formInput);
+      if(response.data.success){
+        localStorage.setItem('x-access-token',response.data.token);
+        success();
+        setTimeout(() => {
+          setLoading(false);
+          navigate('/dashboard');
+        }, 2000);
+      }
+    } catch (error) {
+      // console.log("User Details Mismatched!!");
+      failed();
+      setLoading(false);
+    }
+    
   };
 
   return (
@@ -101,21 +137,24 @@ export default function Login() {
             </CardBody>
             <CardFooter className="pt-0">
                 <Button type="submit" variant="gradient" fullWidth>
-                  log in
+                  {!loading ? 'Log in' : 'Loading...'}
                 </Button>
               <Typography variant="small" className="mt-4 flex justify-center">
                 Don&apos;t have an account?
                 <Typography
+                  
                   as="a"
-                  href="#signup"
                   variant="small"
                   color="blue-gray"
-                  className="ml-1 font-bold"
-                  onClick={handleOpen}
+                  className="ml-1 font-bold cursor-pointer"
+                  onClick={success}
                 >
                   Sign Up
                 </Typography>
               </Typography>
+              <div>
+                <ToastContainer/>
+              </div>
             </CardFooter>
           </Card>
         </form>

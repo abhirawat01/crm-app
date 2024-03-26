@@ -1,0 +1,19 @@
+.component6{
+    /* background-color: beige; */
+    width: 900px;
+    height: 30px;
+    padding: 0rem 2rem;
+}
+
+.top3{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-bottom:10px;
+}
+
+.title3{
+    flex-basis: 70%;
+    font-size: 1.2rem;
+    font-weight: 600;
+}

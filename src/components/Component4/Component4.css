@@ -1,0 +1,28 @@
+.component4{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width:350px;
+    height:330px;
+    /* background-color:var(--clr-silver);  */
+    padding: 1.4rem;
+    border-radius: 20px;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
+    background-color:var(--clr-white);
+}
+
+.title4{
+    font-weight:600;
+    font-size: 1.2rem;
+}
+
+.meta-data{
+    display: flex;
+    justify-content: space-around;
+}
+
+.meta-data > div {
+    font-weight: 800;
+}

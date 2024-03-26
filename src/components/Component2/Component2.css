@@ -1,0 +1,29 @@
+.component2{
+    /* background-color: beige; */
+    width: 900px;
+    height: 400px;
+}
+
+.top2{
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    justify-content: space-evenly;
+    padding-bottom: 0;
+}
+
+.title2{
+    flex-basis: 70%;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.chart{
+    display: flex;
+    justify-content: space-around;
+}
+
+.dropdown{
+    display: flex;
+    align-items: center;
+}

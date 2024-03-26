@@ -11,7 +11,7 @@ function Navbar(){
                     <li className="hover:text-[#FFD1E3] cursor-pointer" >About Us</li>
                     <li className="hover:text-[#FFD1E3] cursor-pointer">Contact</li>
                     <Signup/>
-                    <Login/>
+                    <Login open="false"/>
                 </ul>
             </div>
     )

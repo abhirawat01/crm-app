@@ -1,0 +1,78 @@
+.component1{
+    /* background-color: beige; */
+    width: 900px;
+    height: 160px;
+}
+
+.top{
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    justify-content: space-evenly;
+}
+
+.title{
+    flex-basis: 70%;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.bottom{
+    display: flex;
+    justify-content: space-around;
+}
+
+.bottom > div{
+    width: 220px;
+    height: 85px;
+    border-radius: 10px;
+    border: 1px solid var(--clr-Ash-gray);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.inputlabel{
+    border-radius: 10px;
+}
+
+.dropdown{
+    display: flex;
+    align-items: center;
+}
+
+.data{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.data > h2{
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.rise{
+    display: flex;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    font-size: 12px;
+    padding: 0.2rem 0.5rem;
+    background-color: var(--clr-light-green);
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.down{
+    display: flex;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    font-size: 12px;
+    padding: 0.2rem 0.5rem;
+    background-color: var(--clr-red);
+    align-items: center;
+    gap: 0.2rem;
+}
+
+

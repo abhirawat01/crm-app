@@ -6,7 +6,7 @@ function WelcomeScreen() {
     <div className="bg-cover bg-center w-full p-[20px] h-screen bg-[url('/Images/Welcome.jpg')]">
       <Navbar />
       <div className="mx-auto gap-3 mt-60 flex justify-center items-center flex-col max-w-[650px]">
-        <h1 className="text-5xl text-[#FFD1E3] font-bold">
+        <h1 className="text-5xl text-[#FFD1E3] font-bold text-center">
           Welcome to CRM Project.
         </h1>
         <p className=" text-center text-white font-bold">
